@@ -22,8 +22,8 @@ const handleCheckout = async (req, res) => {
   const session = await stripe.checkout.sessions.create({
     line_items: lineItems,
     mode: "payment",
-    success_url: `${process.env.CLIENT_URL}/Ecommerce/success`,
-    cancel_url: `${process.env.CLIENT_URL}/Ecommerce/checkout`,
+    success_url: `${process.env.CLIENT_URL}/success`,
+    cancel_url: `${process.env.CLIENT_URL}/checkout`,
     shipping_address_collection: {
       allowed_countries: ["US"], // Empty array allows shipping to any country
     },
