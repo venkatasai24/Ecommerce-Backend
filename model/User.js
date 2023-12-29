@@ -40,8 +40,7 @@ const userSchema = new Schema({
       orderedItems: [ItemSchema],
       orderedOn: {
         type: Date,
-        default: Date.now,
-        unique: true,
+        default: () => new Date(), // Use a unique identifier (current date) as the default value
       },
     },
   ], // Array to store ordered items
